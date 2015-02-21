@@ -81,9 +81,15 @@ module ApplicationHelper
   end
 
   # For Gravatar integration
-  def avatar_url(user)
+  def avatar_url(user, options={})
+    # The options part of this method is based on http://blog.rlmflores.me/blog/2012/07/16/method-with-options/
+    default_options = {
+      :size => '58'
+    }
+    options = options.reverse_merge(default_options)
+
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
-    return "http://gravatar.com/avatar/#{gravatar_id}.png?s=218"
+    return "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{options[:size]}"
   end
 
 end
