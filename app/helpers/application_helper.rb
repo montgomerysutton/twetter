@@ -79,4 +79,11 @@ module ApplicationHelper
     html += content_tag :strong, flash[type]
     html.html_safe
   end
+
+  # For Gravatar integration
+  def avatar_url(user)
+    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    return "http://gravatar.com/avatar/#{gravatar_id}.png?s=218"
+  end
+
 end
