@@ -12,14 +12,20 @@
     <ol class="list-unstyled">
       <% @twets.each do |twet| -%>
       <li>
-        <%= content_tag :small, image_tag(avatar_url(current_user), :class => "thumbnail"), :class => 'pull-left avatar' %>
-        <div class="twet_right pull-left">
-          <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
-          <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
-          <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
-          <%= content_tag :p, filter_twet(twet.content) %>
-        </div>
-        
+        <table>
+          <td>
+            <tr>
+              <td>
+                <%= content_tag :small, image_tag(avatar_url(twet.user), :class => "img-rounded"), :class => 'pull-left avatar' %>
+              </td>
+              <td>
+                  <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
+                  <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
+                  <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
+                  <%= content_tag :p, filter_twet(twet.content) %>
+              </td>
+            </table>
+
           <div class="clearfix"></div>
       </li>
       <li><hr></li>
