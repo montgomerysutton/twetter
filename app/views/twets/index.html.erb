@@ -15,17 +15,19 @@
         <table>
           <td>
             <tr>
-              <td>
+              <td class="twet-avatar">
                 <%= content_tag :small, image_tag(avatar_url(twet.user), :class => "img-rounded"), :class => 'pull-left avatar' %>
               </td>
-              <td>
+              <td class="twet-content">
                   <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
                   <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
                   <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
                   <%= content_tag :p, filter_twet(twet.content) %>
               </td>
             </table>
-
+            <div class="twet-options">
+              <%= link_to "Retwet", "#", :class => "pull-right" %>
+            </div>
           <div class="clearfix"></div>
       </li>
       <li><hr></li>

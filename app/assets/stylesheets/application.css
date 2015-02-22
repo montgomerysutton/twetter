@@ -15,3 +15,10 @@
 .avatar {
 	padding: 5px 10px 5px 0;
 }
+td.twet-avatar {}
+td.twet-content {
+	width:100%;
+}
+div.twet-options {
+	padding:0 15px 35px;
+}
