@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @retwet.user_id %>
+</p>
+
+<p>
+  <strong>Twet:</strong>
+  <%= @retwet.twet_id %>
+</p>
+
+<%= link_to 'Edit', edit_retwet_path(@retwet) %> |
+<%= link_to 'Back', retwets_path %>

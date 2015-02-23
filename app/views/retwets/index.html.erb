@@ -1,0 +1,29 @@
+<h1>Listing retwets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Twet</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retwets.each do |retwet| %>
+      <tr>
+        <td><%= retwet.user_id %></td>
+        <td><%= retwet.twet_id %></td>
+        <td><%= link_to 'Show', retwet %></td>
+        <td><%= link_to 'Edit', edit_retwet_path(retwet) %></td>
+        <td><%= link_to 'Destroy', retwet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Retwet', new_retwet_path %>
